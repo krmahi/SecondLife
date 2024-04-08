@@ -35,6 +35,14 @@
     },
     "updates": {
       "url": "https://u.expo.dev/d0f4a173-2a5d-43c3-a7bf-3030a424a6a2"
-    }
+    },
+    "plugins": [
+      [
+        "expo-av",
+        {
+          "microphonePermission": "Allow $(PRODUCT_NAME) to access your microphone."
+        }
+      ]
+    ]
   }
 }
