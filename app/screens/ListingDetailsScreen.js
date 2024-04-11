@@ -12,13 +12,13 @@ function ListingDetailsScreen(props) {
       <View style={styles.detailsContainer}>
         <AppText style={styles.title}>Red Jacked for Sale</AppText>
         <AppText style={styles.price}>$100</AppText>
-        <View style={styles.userContainer}>
-          <ListItem
-            image={require("../assets/user.jpg")}
-            title="Jackson West"
-            subTitle="5 Listings"
-          ></ListItem>
-        </View>
+      </View>
+      <View style={styles.userContainer}>
+        <ListItem
+          image={require("../assets/user.jpg")}
+          title="Jackson West"
+          subTitle="5 Listings"
+        ></ListItem>
       </View>
     </View>
   );
@@ -26,7 +26,8 @@ function ListingDetailsScreen(props) {
 
 const styles = StyleSheet.create({
   detailsContainer: {
-    padding: 15,
+    paddingLeft: 15,
+    paddingTop: 15,
   },
   image: {
     width: "100%",
