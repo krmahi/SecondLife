@@ -17,6 +17,7 @@
     "expo-module-scripts": "^3.4.1",
     "expo-status-bar": "~1.11.1",
     "expo-updates": "~0.24.12",
+    "formik": "^2.4.5",
     "react": "18.2.0",
     "react-dom": "18.2.0",
     "react-native": "0.73.6",
@@ -24,7 +25,8 @@
     "react-native-linear-gradient": "^2.8.3",
     "react-native-swipeable": "^0.6.0",
     "react-native-video": "^6.0.0-beta.8",
-    "react-native-web": "~0.19.6"
+    "react-native-web": "~0.19.6",
+    "yup": "^1.4.0"
   },
   "devDependencies": {
     "@babel/core": "^7.20.0"

@@ -6,9 +6,9 @@ import {
   StyleSheet,
   View,
   StatusBar,
-  Text,
 } from "react-native";
 
+import AppText from "../components/AppText.js";
 import AppButton from "../components/AppButton.js";
 
 function WelcomeScreen(props) {
@@ -28,14 +28,17 @@ function WelcomeScreen(props) {
           style={styles.logo}
           source={require("../assets/logowtext.png")}
         />
-        <Text style={styles.logoText}>Give u'r Items a Second Life</Text>
+        <AppText style={styles.logoText}>
+          {"Give u'r Items a Second Life"}
+        </AppText>
       </View>
       <View style={styles.buttonContainer}>
         <AppButton
-          title="Register"
-          textColor="WelcomeScreenSeconadary"
+          title={"register"}
+          color="WelcomeScreenPrimary"
+          textColor="primary"
         ></AppButton>
-        <AppButton title="Login"></AppButton>
+        <AppButton title={"Login"} color="WelcomeScreenSecondary"></AppButton>
       </View>
     </ImageBackground>
   );
@@ -63,7 +66,6 @@ const styles = StyleSheet.create({
   },
   logoText: {
     color: "#FFFFFF",
-    fontSize: 16,
     fontStyle: "italic",
   },
 });
