@@ -1,11 +1,3 @@
 {
-  "exclude": [
-    "node_modules",
-    "dist",
-    "build",
-    "coverage",
-    "public",
-    "temp",
-    "tmp"
-  ]
+  "exclude": ["node_modules"]
 }
