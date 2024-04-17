@@ -29,7 +29,7 @@ function MessageScreen(props) {
     setMessages(messages.filter((m) => m.id !== message.id));
   };
   return (
-    <Screen>
+    <Screen style={{ paddingTop: 0 }}>
       <FlatList
         data={messages}
         keyExtractor={(messages) => messages.id.toString()}

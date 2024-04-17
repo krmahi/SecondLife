@@ -11,7 +11,7 @@ import {
 import AppText from "../components/AppText.js";
 import AppButton from "../components/AppButton.js";
 
-function WelcomeScreen(props) {
+function WelcomeScreen({ navigation }) {
   return (
     <ImageBackground
       blurRadius={7}
@@ -37,8 +37,13 @@ function WelcomeScreen(props) {
           title={"register"}
           color="WelcomeScreenPrimary"
           textColor="primary"
+          onPress={() => navigation.navigate("Register")}
         ></AppButton>
-        <AppButton title={"Login"} color="WelcomeScreenSecondary"></AppButton>
+        <AppButton
+          title={"Login"}
+          color="WelcomeScreenSecondary"
+          onPress={() => navigation.navigate("Login")}
+        ></AppButton>
       </View>
     </ImageBackground>
   );
