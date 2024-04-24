@@ -1,7 +1,6 @@
 import React, { useRef } from "react";
 import { ScrollView, StyleSheet, View } from "react-native";
 import ImageInput from "./ImageInput";
-import { Animated } from "react-native-web";
 
 function ImageInputList({ imageUris = [], onRemoveImage, onAddImage }) {
   const scrollView = useRef();

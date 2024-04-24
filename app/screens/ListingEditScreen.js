@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState } from "react";
 import { StyleSheet } from "react-native";
 import * as Yup from "yup";
 
@@ -9,21 +9,18 @@ import {
   SubmitButton,
 } from "../components/forms";
 import Screen from "../components/Screen";
+import listingsApi from "../api/listings";
 import CategoryPicker from "../components/CategoryPicker";
 import FormImagePicker from "../components/forms/FormImagePicker";
 import useLocation from "../hooks/useLocation";
+import UploadScreen from "./UploadScreen";
 
 const validationSchema = Yup.object().shape({
-  title: Yup.string()
-    .required("Please enter a Title.")
-    .min(3, "Title is too short."),
-  price: Yup.number()
-    .required("Please enter a Price.")
-    .min(1, "Price must be between 1 and 1000000.")
-    .max(1000000),
+  title: Yup.string().required().min(1).label("Title"),
+  price: Yup.number().required().min(1).max(10000).label("Price"),
   description: Yup.string().label("Description"),
-  category: Yup.object().required().nonNullable("Please select a category."),
-  images: Yup.array().min(1, "Please select atleast one Image."),
+  category: Yup.object().required().nullable().label("Category"),
+  images: Yup.array().min(1, "Please select at least one image."),
 });
 
 const categories = [
@@ -85,8 +82,26 @@ const categories = [
 
 function ListingEditScreen() {
   const location = useLocation();
+  const [uploadVisible, setUploadVisible] = useState(false);
+  const [progress, setProgress] = useState(0);
+
+  const handleSubmit = async (listing, { resetForm }) => {
+    setProgress(0);
+    setUploadVisible(true);
+    await listingsApi.addListing({ ...listing, location }, (progress) =>
+      setProgress(progress)
+    );
+
+    resetForm();
+  };
+
   return (
     <Screen style={styles.container}>
+      <UploadScreen
+        onDone={() => setUploadVisible(false)}
+        progress={progress}
+        visible={uploadVisible}
+      />
       <Form
         initialValues={{
           title: "",
@@ -95,7 +110,7 @@ function ListingEditScreen() {
           category: null,
           images: [],
         }}
-        onSubmit={(values) => console.log(location)}
+        onSubmit={handleSubmit}
         validationSchema={validationSchema}
       >
         <FormImagePicker name="images" />
