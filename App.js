@@ -10,11 +10,13 @@ import AuthNavigator from "./app/navigation/AuthNavigator";
 import navigationTheme from "./app/navigation/navigationTheme";
 import AppNavigator from "./app/navigation/AppNavigator";
 import ActivityIndicator from "./app/components/ActivityIndicator";
+import OfflineNotice from "./app/components/OfflineNotice";
 
 export default function App() {
   return (
     <NavigationContainer theme={navigationTheme}>
-      <AppNavigator />
+      <AuthNavigator />
+      <OfflineNotice />
     </NavigationContainer>
   );
 }
