@@ -1,22 +1,39 @@
-import React from "react";
-import { Button, Text } from "react-native";
-import { createNativeStackNavigator } from "@react-navigation/native-stack";
-import { createBottomTabNavigator } from "@react-navigation/bottom-tabs";
+import React, { useState } from "react";
 import { NavigationContainer, useNavigation } from "@react-navigation/native";
-import { MaterialCommunityIcons } from "@expo/vector-icons";
+// for app loading splash screen
+import AppLoading from "expo-app-loading";
 
-import Screen from "./app/components/Screen";
 import AuthNavigator from "./app/navigation/AuthNavigator";
 import navigationTheme from "./app/navigation/navigationTheme";
 import AppNavigator from "./app/navigation/AppNavigator";
-import ActivityIndicator from "./app/components/ActivityIndicator";
 import OfflineNotice from "./app/components/OfflineNotice";
+import AuthContext from "./app/auth/Context";
+import authStorage from "./app/auth/storage";
 
 export default function App() {
+  const [user, setUser] = useState();
+  const [isReady, setIsready] = useState(false);
+
+  const restoreUser = async () => {
+    const user = await authStorage.getUser();
+    if (user) setUser(user);
+  };
+
+  if (!isReady)
+    return (
+      <AppLoading
+        startAsync={restoreUser}
+        onFinish={() => setIsready(true)}
+        onError={null}
+      />
+    );
+
   return (
-    <NavigationContainer theme={navigationTheme}>
-      <AuthNavigator />
-      <OfflineNotice />
-    </NavigationContainer>
+    <AuthContext.Provider value={{ user, setUser }}>
+      <NavigationContainer theme={navigationTheme}>
+        {user ? <AppNavigator /> : <AuthNavigator />}
+        <OfflineNotice />
+      </NavigationContainer>
+    </AuthContext.Provider>
   );
 }

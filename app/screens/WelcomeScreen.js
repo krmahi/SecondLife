@@ -16,7 +16,7 @@ function WelcomeScreen({ navigation }) {
     <ImageBackground
       blurRadius={7}
       style={styles.background}
-      source={require("../assets/background.png")}
+      source={require("../assets/background.jpg")}
     >
       <StatusBar
         backgroundColor="transparent"

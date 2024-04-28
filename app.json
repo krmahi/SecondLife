@@ -9,8 +9,8 @@
     "jsEngine": "hermes",
     "splash": {
       "image": "./app/assets/splash.png",
-      "resizeMode": "contain",
-      "backgroundColor": "#ffffff"
+      "resizeMode": "cover",
+      "backgroundColor": "#2A2A2A"
     },
     "assetBundlePatterns": ["**/*"],
     "ios": {
@@ -19,7 +19,7 @@
     "android": {
       "adaptiveIcon": {
         "foregroundImage": "./app/assets/adaptive-icon.png",
-        "backgroundColor": "#ffffff"
+        "backgroundColor": "#2A2A2A"
       }
     },
     "web": {
@@ -36,6 +36,7 @@
     },
     "updates": {
       "url": "https://u.expo.dev/d0f4a173-2a5d-43c3-a7bf-3030a424a6a2"
-    }
+    },
+    "plugins": ["expo-secure-store"]
   }
 }
