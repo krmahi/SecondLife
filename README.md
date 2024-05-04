@@ -57,17 +57,17 @@ To run the application on your machine, follow the steps below:
 ### Setting up the Backend Server
 
   1. Download/ Clone the repository on your machine.
-  2. Open the `backend` folder via VS Code.
+  2. Open the `Backend` folder via VS Code.
   3. Open the `development.json` file (`config` &#8594; `development.json`) and change the asterisks in `assetsBaseUrl` to your machine IPv4 Address.
-  4. Open the terminal at the root of the `backend` folder (<kbd>Ctrl</kbd> + <kbd>'</kbd>) and run `npm install` to install the project dependencies.
-  5. Still in the terminal, run the command `node index.js` to start the backend server.
-  6. The backend server is live and ready to be accessed - To confirm that it is live, access `http://localhost:9000/api/listings`.
+  4. Open the terminal at the root of the `Backend` folder (<kbd>Ctrl</kbd> + <kbd>'</kbd>) and run `npm install` to install the project dependencies.
+  5. Still in the terminal, run the command `node index.js` to start the Backend server.
+  6. The Backend server is live and ready to be accessed - To confirm that it is live, access `http://localhost:9000/api/listings`.
 
 ### Setting up the Application
 
   1. Download/ Clone the repository on your machine.
   2. Open the `app` folder via VS Code.
-  3. Open the `settings.js` file (`app` &#8594; `config` &#8594; `settings.js`) and change the asterisks in `apiUrl` to your machine IPv4 Address.
+  3. Open the `client.js` file (`app` &#8594; `api` &#8594; `client.js`) and change the asterisks in `baseURL` to your machine IPv4 Address.
   4. Make sure you have Expo CLI installed globally - if not, install it via `npm install -g expo-cli`.
   5. Open the terminal at the root of the `app` folder (<kbd>Ctrl</kbd> + <kbd>'</kbd>) and run `npm install` to install the project dependencies.
   6. Still in the terminal, run the command `expo start` to start the app (make sure an AVD is running).
