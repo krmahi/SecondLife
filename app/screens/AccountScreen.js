@@ -16,6 +16,7 @@ const menuItems = [
       name: "format-list-bulleted",
       backgroundColor: colors.primary,
     },
+    targetScreen: routes.LISTINGS,
   },
   {
     title: "My Messages",
@@ -38,7 +39,7 @@ function AccountScreen({ navigation }) {
           title={user.name}
           subTitle={user.email}
           image={require("../assets/mahi_pic.png")}
-        ></ListItem>
+        />
       </View>
       <View style={styles.container}>
         <FlatList
