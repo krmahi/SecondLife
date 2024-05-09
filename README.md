@@ -1,5 +1,5 @@
 <p align="center">
-    <a href="https://expo.io/@nathanabela/donewithit">
+    <a>
         <img src="app/assets/App_logo.png" width="100" alt="SecondLife Logo"/>
     </a>
     <h1 align="center"> SecondLife </h1>
