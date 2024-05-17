@@ -2,6 +2,7 @@
   "expo": {
     "name": "SecondLife",
     "slug": "secondlife",
+    "platforms": ["ios", "android", "web"],
     "version": "1.0.0",
     "orientation": "portrait",
     "icon": "./app/assets/AppIcon.png",
@@ -14,7 +15,9 @@
     },
     "assetBundlePatterns": ["**/*"],
     "ios": {
-      "supportsTablet": true
+      "supportsTablet": true,
+      "bundleIdentifier": "com.mahi_kr.secondlife",
+      "buildNumber": "1.0.0"
     },
     "android": {
       "useNextNotificationsApi": true,
@@ -22,7 +25,9 @@
       "adaptiveIcon": {
         "foregroundImage": "./app/assets/AppIcon.png",
         "backgroundColor": "#2A2A2A"
-      }
+      },
+      "package": "com.mahi_kr.secondlife",
+      "versionCode": 1
     },
     "web": {
       "favicon": "./app/assets/AppIcon.png"
