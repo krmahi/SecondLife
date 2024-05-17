@@ -10,6 +10,7 @@ import OfflineNotice from "./app/components/OfflineNotice";
 import AuthContext from "./app/auth/Context";
 import authStorage from "./app/auth/storage";
 import { navigationRef } from "./app/navigation/rootNavigation";
+
 //bugsnag not supported for latest expo-build
 // import logger from "./app/utility/logger";
 
